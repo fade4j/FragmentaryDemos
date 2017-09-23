@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.spacecowboy.fragmentarydemos.workingdemo.ArcMenuActivity">
+
+    <com.spacecowboy.fragmentarydemos.workingdemo.widgets.SlidingArcView
+        android:id="@+id/sliding_arc_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/color_DDDDDD">
+
+    </com.spacecowboy.fragmentarydemos.workingdemo.widgets.SlidingArcView>
+
+
+    <Button
+        android:id="@+id/btn_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginTop="100dp"
+        android:text="RefreshData"
+        android:textAllCaps="false"
+        android:textSize="16sp"/>
+
+</LinearLayout>

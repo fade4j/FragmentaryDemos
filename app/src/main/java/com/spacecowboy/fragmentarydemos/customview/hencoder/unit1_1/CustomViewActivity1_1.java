@@ -32,4 +32,9 @@ public class CustomViewActivity1_1 extends BaseActivity {
         textView.setTextScaleX(52);
         return textView;
     }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

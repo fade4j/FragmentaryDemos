@@ -15,4 +15,9 @@ public class EmptyActivity extends BaseActivity {
     }
 
     public void show(){}
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

@@ -20,9 +20,10 @@ import com.spacecowboy.fragmentarydemos.R;
 import com.spacecowboy.fragmentarydemos.utils.UiUtil;
 
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Unbinder mUnbinder;
 
@@ -48,8 +49,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar supportActionBar = getSupportActionBar();
-        if (supportActionBar != null)
+        if (supportActionBar != null) {
             supportActionBar.setBackgroundDrawable(UiUtil.getResDrawable(R.drawable.transparent));
+        }
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

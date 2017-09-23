@@ -44,7 +44,32 @@ public class UiUtil {
     }
 
     public static int getResColor(int resId) {
-
         return getResources().getColor(resId);
+    }
+
+    public static int getScreenWidth() {
+        return getResources().getDisplayMetrics().widthPixels;
+    }
+
+    public static int getScreenHeight() {
+        return getResources().getDisplayMetrics().heightPixels;
+    }
+
+    public static int dp2px(float v) {
+        return (int) (getDensity() * v + 0.5f);
+    }
+    public static int sp2px(float v) {
+        return (int) (getScaleDensity() * v + 0.5f);
+    }
+    public static int px2dp(float v) {
+        return (int) (v / getDensity() + 0.5f);
+    }
+
+    public static float getDensity() {
+        return getResources().getDisplayMetrics().density;
+    }
+
+    public static float getScaleDensity() {
+        return getResources().getDisplayMetrics().scaledDensity;
     }
 }

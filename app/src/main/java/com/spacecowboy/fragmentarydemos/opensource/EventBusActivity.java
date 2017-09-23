@@ -18,4 +18,9 @@ public class EventBusActivity extends BaseActivity{
     protected View getSubContentView() {
         return null;
     }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

@@ -7,6 +7,8 @@ import com.spacecowboy.fragmentarydemos.utils.UiUtil
 import kotlinx.android.synthetic.main.activity_custom_view.*
 
 class CustomViewActivity : BaseActivity() {
+    override fun onClick(v: View?) {
+    }
 
     override fun initView(view: View?) {
         tv_custom_view.text = "Modified"

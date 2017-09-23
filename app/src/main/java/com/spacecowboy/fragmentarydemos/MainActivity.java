@@ -9,6 +9,8 @@ import com.spacecowboy.fragmentarydemos.app.MainExpandableAdapter;
 import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_1.activity.CustomViewActivity;
 import com.spacecowboy.fragmentarydemos.opensource.ButterKnifeActivity;
 import com.spacecowboy.fragmentarydemos.utils.UiUtil;
+import com.spacecowboy.fragmentarydemos.workingdemo.ArcMenuActivity;
+import com.spacecowboy.fragmentarydemos.workingdemo.VLayoutTestActivity;
 
 import java.util.ArrayList;
 
@@ -40,6 +42,7 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
         mActivities = new ArrayList<>();
         ArrayList<String> sectionOne = new ArrayList<>();
         ArrayList<Class> sectionOneActivities = new ArrayList<>();
+        // 开源
         sectionOne.add("1. ButterKnife");
         sectionOneActivities.add(ButterKnifeActivity.class);
         sectionOne.add("2. Kotlin");
@@ -48,6 +51,21 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
         sectionOne.add("4. Unit Four");
         mChildTitles.add(sectionOne);
         mActivities.add(sectionOneActivities);
+        // HenCoder
+        ArrayList<String> sectionTwo = new ArrayList<>();
+        ArrayList<Class> sectionTwoActivities = new ArrayList<>();
+        mChildTitles.add(sectionTwo);
+        mActivities.add(sectionTwoActivities);
+        // 工作Demo
+        ArrayList<String> sectionThree = new ArrayList<>();
+        sectionThree.add("1. 弧形菜单");
+        sectionThree.add("2. VLayoutTest");
+        ArrayList<Class> sectionThreeActivities = new ArrayList<>();
+        sectionThreeActivities.add(ArcMenuActivity.class);
+        sectionThreeActivities.add(VLayoutTestActivity.class);
+        mChildTitles.add(sectionThree);
+        mActivities.add(sectionThreeActivities);
+
     }
 
     /**
@@ -56,7 +74,7 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
     private void initParentData() {
         mParentTitles.add("开源");
         mParentTitles.add("Android自定义View(HenCoder)");
-        mParentTitles.add("待添加标题");
+        mParentTitles.add("工作Demo");
         mParentTitles.add("待添加标题");
         mParentTitles.add("待添加标题");
     }
@@ -79,5 +97,10 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
                 startActivity(intent);
             }
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
