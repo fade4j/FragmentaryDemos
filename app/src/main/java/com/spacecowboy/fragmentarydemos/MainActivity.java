@@ -6,7 +6,9 @@ import android.widget.ExpandableListView;
 
 import com.spacecowboy.fragmentarydemos.app.BaseActivity;
 import com.spacecowboy.fragmentarydemos.app.MainExpandableAdapter;
+import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_1.CustomViewActivity1_1;
 import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_1.activity.CustomViewActivity;
+import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_4_canvas_matrix.CanvasAndMatrixActivity;
 import com.spacecowboy.fragmentarydemos.opensource.ButterKnifeActivity;
 import com.spacecowboy.fragmentarydemos.utils.UiUtil;
 import com.spacecowboy.fragmentarydemos.workingdemo.ArcMenuActivity;
@@ -47,14 +49,18 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
         sectionOneActivities.add(ButterKnifeActivity.class);
         sectionOne.add("2. Kotlin");
         sectionOneActivities.add(CustomViewActivity.class);
-        sectionOne.add("3. EventBus");
-        sectionOne.add("4. Unit Four");
+        //sectionOne.add("3. EventBus");
+        //sectionOne.add("4. Unit Four");
         mChildTitles.add(sectionOne);
         mActivities.add(sectionOneActivities);
         // HenCoder
         ArrayList<String> sectionTwo = new ArrayList<>();
         ArrayList<Class> sectionTwoActivities = new ArrayList<>();
+        sectionTwo.add("CustomViewActivity1_1");
+        sectionTwo.add("Canvas And Matrix Test");
         mChildTitles.add(sectionTwo);
+        sectionTwoActivities.add(CustomViewActivity1_1.class);
+        sectionTwoActivities.add(CanvasAndMatrixActivity.class);
         mActivities.add(sectionTwoActivities);
         // 工作Demo
         ArrayList<String> sectionThree = new ArrayList<>();

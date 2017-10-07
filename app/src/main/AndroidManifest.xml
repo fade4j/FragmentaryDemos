@@ -27,7 +27,8 @@
         </activity>
         <activity android:name=".workingdemo.ArcMenuActivity">
         </activity>
-        <activity android:name=".workingdemo.VLayoutTestActivity">
+        <activity android:name=".workingdemo.VLayoutTestActivity"></activity>
+        <activity android:name=".customview.hencoder.unit1_4_canvas_matrix.CanvasAndMatrixActivity">
         </activity>
     </application>
 

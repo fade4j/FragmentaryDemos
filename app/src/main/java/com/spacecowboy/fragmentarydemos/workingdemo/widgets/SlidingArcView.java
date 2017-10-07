@@ -126,6 +126,12 @@ public class SlidingArcView extends ViewGroup implements View.OnClickListener {
         }
         mVelocityTracker.addMovement(event);//将事件加入到VelocityTracker类实例中
         switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                downPointId = event.getPointerId(0);
+                downX = lastX = (int) event.getX();
+                downY = (int) event.getY();
+                return true;
+
             case MotionEvent.ACTION_MOVE:
                 if (canScroll) {
                     flushViews((int) (event.getX() - lastX));
@@ -133,6 +139,7 @@ public class SlidingArcView extends ViewGroup implements View.OnClickListener {
                     invalidate();
                 }
                 return true;
+
             case MotionEvent.ACTION_UP:
                 //先判断是否是点击事件
                 final int pi = event.findPointerIndex(downPointId);
@@ -157,11 +164,6 @@ public class SlidingArcView extends ViewGroup implements View.OnClickListener {
                     isAnimated = false;
                     resetView();
                 }
-                return true;
-            case MotionEvent.ACTION_DOWN:
-                downPointId = event.getPointerId(0);
-                downX = lastX = (int) event.getX();
-                downY = (int) event.getY();
                 return true;
         }
         return super.onTouchEvent(event);

@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
-public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener{
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Unbinder mUnbinder;
 
@@ -52,20 +52,17 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         if (supportActionBar != null) {
             supportActionBar.setBackgroundDrawable(UiUtil.getResDrawable(R.drawable.transparent));
         }
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*/
-                onFloatingButtonClicked(view);
-            }
-        });
+        if (getFloatingButtonClickListener() == null) {
+            findViewById(R.id.fab).setVisibility(View.GONE);
+        } else {
+            findViewById(R.id.fab).setOnClickListener(getFloatingButtonClickListener());
+        }
     }
 
     protected abstract void initView(View view);
 
-    protected void onFloatingButtonClicked(View view) {
+    protected View.OnClickListener getFloatingButtonClickListener() {
+        return null;
     }
 
     protected abstract View getSubContentView();

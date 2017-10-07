@@ -42,7 +42,7 @@ public class VLayoutTestActivity extends BaseActivity {
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-                outRect.set(10, 10, 10, 10);
+                outRect.set(15, 15, 15, 15);
             }
         });
         final List<LayoutHelper> helpers = new LinkedList<>();
@@ -51,8 +51,7 @@ public class VLayoutTestActivity extends BaseActivity {
         gridLayoutHelper.setItemCount(25);
         StaggeredGridLayoutHelper staggeredGridLayoutHelper = new StaggeredGridLayoutHelper(4);
         staggeredGridLayoutHelper.setItemCount(30);
-        final ScrollFixLayoutHelper scrollFixLayoutHelper = new ScrollFixLayoutHelper(FixLayoutHelper.TOP_RIGHT, 100, 100);
-
+        final ScrollFixLayoutHelper scrollFixLayoutHelper = new ScrollFixLayoutHelper(FixLayoutHelper.TOP_RIGHT, 500, 500);
         helpers.add(DefaultLayoutHelper.newHelper(7));
         helpers.add(scrollFixLayoutHelper);
         helpers.add(DefaultLayoutHelper.newHelper(2));
@@ -119,11 +118,11 @@ public class VLayoutTestActivity extends BaseActivity {
         switch (v.getId()) {
             case R.id.jump:
                 String text = mEditText.getText().toString();
-                if (TextUtils.isEmpty(text)){
+                if (TextUtils.isEmpty(text)) {
                     return;
                 }
                 mRecyclerView.scrollToPosition(Integer.parseInt(text));
-                mRecyclerView.getAdapter().notifyDataSetChanged();
+                //mRecyclerView.getAdapter().notifyDataSetChanged();
                 break;
         }
     }
@@ -136,7 +135,6 @@ public class VLayoutTestActivity extends BaseActivity {
                 }
             }, 6000);*/
     static class MainViewHolder extends RecyclerView.ViewHolder {
-
         public MainViewHolder(View itemView) {
             super(itemView);
         }
