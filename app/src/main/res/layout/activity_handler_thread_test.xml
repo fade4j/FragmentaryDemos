@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="20"
-    tools:context="com.spacecowboy.fragmentarydemos.normaltest.HandlerThreadTestActivity">
+    tools:context="com.spacecowboy.fragmentarydemos.normaltest.IdleHandlerTestActivity">
 
     <com.spacecowboy.fragmentarydemos.normaltest.CustomTextView
         android:layout_width="match_parent"

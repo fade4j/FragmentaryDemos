@@ -32,19 +32,19 @@ public class CustomTextView extends AppCompatTextView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        L.e("HandlerThreadTestActivity", "  ---- onMeasure");
+        L.e("IdleHandlerTestActivity", "  ---- onMeasure");
     }
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
-        L.e("HandlerThreadTestActivity", "  ---- onLayout");
+        L.e("IdleHandlerTestActivity", "  ---- onLayout");
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        //L.e("HandlerThreadTestActivity", "  ---- onDraw");
+        //L.e("IdleHandlerTestActivity", "  ---- onDraw");
         if (mDrawFinishedListener != null) {
             mDrawFinishedListener.onDrawFinished();
         }

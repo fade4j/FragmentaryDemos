@@ -19,7 +19,7 @@ import java.lang.reflect.Field;
 
 import butterknife.BindView;
 
-public class HandlerThreadTestActivity extends BaseActivity implements OnDrawFinishedListener {
+public class IdleHandlerTestActivity extends BaseActivity implements OnDrawFinishedListener {
     private long time;
     @BindView(R.id.tv_last)
     CustomTextView customTextView;
@@ -29,7 +29,7 @@ public class HandlerThreadTestActivity extends BaseActivity implements OnDrawFin
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         time = System.currentTimeMillis();
-        L.e("HandlerThreadTestActivity", "onCreate");
+        L.e("IdleHandlerTestActivity", "onCreate");
         //HandlerThread thread = new HandlerThread(NAME);
         /*Looper.myQueue().addIdleHandler(new MessageQueue.IdleHandler() {
             @Override
@@ -48,7 +48,7 @@ public class HandlerThreadTestActivity extends BaseActivity implements OnDrawFin
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
                 //sendEmptyMessage(1);
-                L.e("HandlerThreadTestActivity", "handleMessage");
+                L.e("IdleHandlerTestActivity", "handleMessage");
             }
         };
         try {
@@ -58,7 +58,7 @@ public class HandlerThreadTestActivity extends BaseActivity implements OnDrawFin
             queue.addIdleHandler(new MessageQueue.IdleHandler() {
                 @Override
                 public boolean queueIdle() {
-                    L.e("HandlerThreadTestActivity", "queueIdle " + (System.currentTimeMillis() - time));
+                    L.e("IdleHandlerTestActivity", "queueIdle " + (System.currentTimeMillis() - time));
                     return isFinished;
                 }
             });
@@ -74,13 +74,13 @@ public class HandlerThreadTestActivity extends BaseActivity implements OnDrawFin
     @Override
     protected void onStart() {
         super.onStart();
-        L.e("HandlerThreadTestActivity", "onStart");
+        L.e("IdleHandlerTestActivity", "onStart");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        L.e("HandlerThreadTestActivity", "onResume " + (System.currentTimeMillis() - time));
+        L.e("IdleHandlerTestActivity", "onResume " + (System.currentTimeMillis() - time));
 
     }
 
@@ -104,6 +104,6 @@ public class HandlerThreadTestActivity extends BaseActivity implements OnDrawFin
     public void onDrawFinished() {
         isFinished = true;
 
-        L.e("HandlerThreadTestActivity", "onDrawFinished " + (System.currentTimeMillis() - time));
+        L.e("IdleHandlerTestActivity", "onDrawFinished " + (System.currentTimeMillis() - time));
     }
 }

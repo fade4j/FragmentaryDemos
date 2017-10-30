@@ -33,7 +33,7 @@
         </activity>
         <activity android:name=".customview.circleimage.CircleImageTestActivity">
         </activity>
-        <activity android:name=".normaltest.HandlerThreadTestActivity">
+        <activity android:name=".normaltest.IdleHandlerTestActivity">
         </activity>
     </application>
 

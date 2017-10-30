@@ -10,7 +10,7 @@ import com.spacecowboy.fragmentarydemos.customview.circleimage.CircleImageTestAc
 import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_1.CustomViewActivity1_1;
 import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_1.activity.CustomViewActivity;
 import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_4_canvas_matrix.CanvasAndMatrixActivity;
-import com.spacecowboy.fragmentarydemos.normaltest.HandlerThreadTestActivity;
+import com.spacecowboy.fragmentarydemos.normaltest.IdleHandlerTestActivity;
 import com.spacecowboy.fragmentarydemos.opensource.ButterKnifeActivity;
 import com.spacecowboy.fragmentarydemos.utils.UiUtil;
 import com.spacecowboy.fragmentarydemos.workingdemo.ArcMenuActivity;
@@ -78,9 +78,9 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
 
         // Normal Test
         ArrayList<String> section4 = new ArrayList<>();
-        section4.add("1. 弧形菜单");
+        section4.add("1. MessageQueue.IdleHandler");
         ArrayList<Class> sectionActivities4 = new ArrayList<>();
-        sectionActivities4.add(HandlerThreadTestActivity.class);
+        sectionActivities4.add(IdleHandlerTestActivity.class);
         mChildTitles.add(section4);
         mActivities.add(sectionActivities4);
 
