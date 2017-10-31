@@ -30,7 +30,7 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
         expandableListView.setOnChildClickListener(this);
     }
 
-    private void initData() {
+    protected void initData() {
         mParentTitles = new ArrayList<>();
         mChildTitles = new ArrayList<>();
         initParentData();
@@ -66,9 +66,11 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
         ArrayList<String> sectionThree = new ArrayList<>();
         sectionThree.add("1. 弧形菜单");
         sectionThree.add("2. VLayoutTest");
+        sectionThree.add("3. Bitmap size text");
         ArrayList<Class> sectionThreeActivities = new ArrayList<>();
         sectionThreeActivities.add(ArcMenuActivity.class);
         sectionThreeActivities.add(VLayoutTestActivity.class);
+        sectionThreeActivities.add(DailyTestActivity.class);
         mChildTitles.add(sectionThree);
         mActivities.add(sectionThreeActivities);
 

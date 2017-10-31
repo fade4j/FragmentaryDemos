@@ -2,29 +2,23 @@ package com.spacecowboy.fragmentarydemos.app;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 
 import com.spacecowboy.fragmentarydemos.R;
 import com.spacecowboy.fragmentarydemos.utils.UiUtil;
 
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import butterknife.Unbinder;
 
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
-
+    protected String TAG = this.getClass().getSimpleName();
     private Unbinder mUnbinder;
 
     @Override
@@ -57,6 +51,11 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         } else {
             findViewById(R.id.fab).setOnClickListener(getFloatingButtonClickListener());
         }
+
+        initData();
+    }
+
+    protected void initData() {
     }
 
     protected abstract void initView(View view);

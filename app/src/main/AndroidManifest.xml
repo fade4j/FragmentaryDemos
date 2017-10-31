@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.spacecowboy.fragmentarydemos">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:name=".app.AppApplication"
         android:allowBackup="true"
@@ -15,6 +17,7 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -27,8 +30,10 @@
         </activity>
         <activity android:name=".workingdemo.ArcMenuActivity">
         </activity>
-        <activity android:name=".workingdemo.VLayoutTestActivity"></activity>
+        <activity android:name=".workingdemo.VLayoutTestActivity"/>
         <activity android:name=".customview.hencoder.unit1_4_canvas_matrix.CanvasAndMatrixActivity">
+        </activity>
+        <activity android:name=".DailyTestActivity">
         </activity>
     </application>
 
