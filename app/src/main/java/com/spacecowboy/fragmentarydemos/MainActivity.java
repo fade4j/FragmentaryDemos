@@ -6,9 +6,11 @@ import android.widget.ExpandableListView;
 
 import com.spacecowboy.fragmentarydemos.app.BaseActivity;
 import com.spacecowboy.fragmentarydemos.app.MainExpandableAdapter;
+import com.spacecowboy.fragmentarydemos.customview.circleimage.CircleImageTestActivity;
 import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_1.CustomViewActivity1_1;
 import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_1.activity.CustomViewActivity;
 import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_4_canvas_matrix.CanvasAndMatrixActivity;
+import com.spacecowboy.fragmentarydemos.normaltest.IdleHandlerTestActivity;
 import com.spacecowboy.fragmentarydemos.opensource.ButterKnifeActivity;
 import com.spacecowboy.fragmentarydemos.utils.UiUtil;
 import com.spacecowboy.fragmentarydemos.workingdemo.ArcMenuActivity;
@@ -42,26 +44,28 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
      */
     private void initChildData() {
         mActivities = new ArrayList<>();
-        ArrayList<String> sectionOne = new ArrayList<>();
-        ArrayList<Class> sectionOneActivities = new ArrayList<>();
+        ArrayList<String> section1 = new ArrayList<>();
+        ArrayList<Class> sectionActivities1 = new ArrayList<>();
         // 开源
-        sectionOne.add("1. ButterKnife");
-        sectionOneActivities.add(ButterKnifeActivity.class);
-        sectionOne.add("2. Kotlin");
-        sectionOneActivities.add(CustomViewActivity.class);
+        section1.add("1. ButterKnife");
+        sectionActivities1.add(ButterKnifeActivity.class);
+        section1.add("2. Kotlin");
+        sectionActivities1.add(CustomViewActivity.class);
         //sectionOne.add("3. EventBus");
         //sectionOne.add("4. Unit Four");
-        mChildTitles.add(sectionOne);
-        mActivities.add(sectionOneActivities);
+        mChildTitles.add(section1);
+        mActivities.add(sectionActivities1);
         // HenCoder
-        ArrayList<String> sectionTwo = new ArrayList<>();
-        ArrayList<Class> sectionTwoActivities = new ArrayList<>();
-        sectionTwo.add("CustomViewActivity1_1");
-        sectionTwo.add("Canvas And Matrix Test");
-        mChildTitles.add(sectionTwo);
-        sectionTwoActivities.add(CustomViewActivity1_1.class);
-        sectionTwoActivities.add(CanvasAndMatrixActivity.class);
-        mActivities.add(sectionTwoActivities);
+        ArrayList<String> section2 = new ArrayList<>();
+        ArrayList<Class> sectionActivities2 = new ArrayList<>();
+        section2.add("CustomViewActivity1_1");
+        section2.add("Canvas And Matrix Test");
+        section2.add("CircleImageView Test");
+        mChildTitles.add(section2);
+        sectionActivities2.add(CustomViewActivity1_1.class);
+        sectionActivities2.add(CanvasAndMatrixActivity.class);
+        sectionActivities2.add(CircleImageTestActivity.class);
+        mActivities.add(sectionActivities2);
         // 工作Demo
         ArrayList<String> sectionThree = new ArrayList<>();
         sectionThree.add("1. 弧形菜单");
@@ -74,6 +78,14 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
         mChildTitles.add(sectionThree);
         mActivities.add(sectionThreeActivities);
 
+        // Normal Test
+        ArrayList<String> section4 = new ArrayList<>();
+        section4.add("1. MessageQueue.IdleHandler");
+        ArrayList<Class> sectionActivities4 = new ArrayList<>();
+        sectionActivities4.add(IdleHandlerTestActivity.class);
+        mChildTitles.add(section4);
+        mActivities.add(sectionActivities4);
+
     }
 
     /**
@@ -83,7 +95,7 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
         mParentTitles.add("开源");
         mParentTitles.add("Android自定义View(HenCoder)");
         mParentTitles.add("工作Demo");
-        mParentTitles.add("待添加标题");
+        mParentTitles.add("Normal Test");
         mParentTitles.add("待添加标题");
     }
 

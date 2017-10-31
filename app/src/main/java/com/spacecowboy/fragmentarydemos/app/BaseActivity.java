@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
-    protected String TAG = this.getClass().getSimpleName();
+    protected String NAME = this.getClass().getSimpleName();
     private Unbinder mUnbinder;
 
     @Override
