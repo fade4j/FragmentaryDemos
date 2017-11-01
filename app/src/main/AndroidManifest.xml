@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.spacecowboy.fragmentarydemos">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:name=".app.AppApplication"
         android:allowBackup="true"
@@ -31,6 +33,7 @@
         <activity android:name=".workingdemo.VLayoutTestActivity"/>
         <activity android:name=".customview.hencoder.unit1_4_canvas_matrix.CanvasAndMatrixActivity">
         </activity>
+        <activity android:name=".DailyTestActivity">
         <activity android:name=".customview.circleimage.CircleImageTestActivity">
         </activity>
         <activity android:name=".normaltest.IdleHandlerTestActivity">
