@@ -12,6 +12,7 @@ import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_1.activity.Cus
 import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_4_canvas_matrix.CanvasAndMatrixActivity;
 import com.spacecowboy.fragmentarydemos.normaltest.EditTextTestActivity;
 import com.spacecowboy.fragmentarydemos.normaltest.IdleHandlerTestActivity;
+import com.spacecowboy.fragmentarydemos.normaltest.ScrollableTestViewActivity;
 import com.spacecowboy.fragmentarydemos.opensource.ButterKnifeActivity;
 import com.spacecowboy.fragmentarydemos.utils.UiUtil;
 import com.spacecowboy.fragmentarydemos.workingdemo.ArcMenuActivity;
@@ -27,13 +28,13 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
     @Override
     protected void initView(View view) {
         ExpandableListView expandableListView = (ExpandableListView) findViewById(R.id.list_view_expandable);
-        initData();
+        initDataAfterViews();
         MainExpandableAdapter mAdapter = new MainExpandableAdapter(mParentTitles, mChildTitles);
         expandableListView.setAdapter(mAdapter);
         expandableListView.setOnChildClickListener(this);
     }
 
-    protected void initData() {
+    protected void initDataAfterViews() {
         mParentTitles = new ArrayList<>();
         mChildTitles = new ArrayList<>();
         initParentData();
@@ -83,9 +84,11 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
         ArrayList<String> section4 = new ArrayList<>();
         section4.add("1. MessageQueue.IdleHandler");
         section4.add("2. EditText Test");
+        section4.add("3. Scrollable TestView Test");
         ArrayList<Class> sectionActivities4 = new ArrayList<>();
         sectionActivities4.add(IdleHandlerTestActivity.class);
         sectionActivities4.add(EditTextTestActivity.class);
+        sectionActivities4.add(ScrollableTestViewActivity.class);
         mChildTitles.add(section4);
         mActivities.add(sectionActivities4);
 

@@ -33,7 +33,7 @@ public class DailyTestActivity extends BaseActivity {
     private final int REQUEST_CODE_STORAGE = 1;
 
     @Override
-    protected void initData() {
+    protected void initDataAfterViews() {
         ArrayList<String> list = new ArrayList<>();
         //list.add(5, "hahaha");
         for (int i = 0; i < list.size(); i++) {
@@ -54,7 +54,7 @@ public class DailyTestActivity extends BaseActivity {
             return;
         }
 
-        L.e(TAG, "srcFile.length = " + srcFile.length());
+        L.e(NAME, "srcFile.length = " + srcFile.length());
 
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
@@ -64,8 +64,8 @@ public class DailyTestActivity extends BaseActivity {
 
         float scaleX = oWidth * 1.0f / UiUtil.getScreenWidth();
         float scaleY = oHeight * 1.0f / UiUtil.getScreenHeight();
-        L.e(TAG, "scaleX = " + scaleX + " scaleY = " + scaleY);
-        L.e(TAG, "UiUtil.getScreenWidth() = " + UiUtil.getScreenWidth() + " UiUtil.getScreenHeight() = " + UiUtil.getScreenHeight());
+        L.e(NAME, "scaleX = " + scaleX + " scaleY = " + scaleY);
+        L.e(NAME, "UiUtil.getScreenWidth() = " + UiUtil.getScreenWidth() + " UiUtil.getScreenHeight() = " + UiUtil.getScreenHeight());
         float scale = Math.max(scaleX, scaleY);
         int insampleSize = 1;
         if (scale % 2 > 0) {
@@ -75,22 +75,22 @@ public class DailyTestActivity extends BaseActivity {
         //options.inScaled = true;
         options.inSampleSize = insampleSize;
         Bitmap bitmap = BitmapFactory.decodeFile(srcFile.getAbsolutePath(), options);
-        L.e(TAG, "bitmap.getByteCount = " + bitmap.getByteCount());
-        L.e(TAG, "scale = " + scale + " " + options.inSampleSize);
-        L.e(TAG, "bitmap.getByteCount = " + options.outWidth + " , " + options.outHeight);
+        L.e(NAME, "bitmap.getByteCount = " + bitmap.getByteCount());
+        L.e(NAME, "scale = " + scale + " " + options.inSampleSize);
+        L.e(NAME, "bitmap.getByteCount = " + options.outWidth + " , " + options.outHeight);
         mImageView.setImageBitmap(bitmap);
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        L.e(TAG, "requestCode = " + requestCode);
+        L.e(NAME, "requestCode = " + requestCode);
         for (String permission : permissions) {
-            L.e(TAG, "permission = " + permission);
+            L.e(NAME, "permission = " + permission);
         }
 
         for (int i = 0; i < grantResults.length; i++) {
-            L.e(TAG, "permission = " + grantResults[i]);
+            L.e(NAME, "permission = " + grantResults[i]);
         }
 
         if (requestCode == REQUEST_CODE_STORAGE) {
@@ -105,11 +105,11 @@ public class DailyTestActivity extends BaseActivity {
      */
     private void getHeapSize() {
         ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
-        Log.e(TAG, "heapSize = " + manager.getMemoryClass() + " , largeHapSize = " + manager.getLargeMemoryClass());
+        Log.e(NAME, "heapSize = " + manager.getMemoryClass() + " , largeHapSize = " + manager.getLargeMemoryClass());
         long totalMemory = Runtime.getRuntime().totalMemory();
         long maxMemory = Runtime.getRuntime().maxMemory();
         long freeMemory = Runtime.getRuntime().freeMemory();
-        Log.e(TAG, "totalMemory = " + totalMemory + " , maxMemory = " + maxMemory + " , freeMemory = " + freeMemory);
+        Log.e(NAME, "totalMemory = " + totalMemory + " , maxMemory = " + maxMemory + " , freeMemory = " + freeMemory);
 
     }
 
@@ -117,7 +117,7 @@ public class DailyTestActivity extends BaseActivity {
     public void onTrimMemory(int level) {
         super.onTrimMemory(level);
 
-        Log.e(TAG, "onTrimMemory level = " + level);
+        Log.e(NAME, "onTrimMemory level = " + level);
 
     }
 

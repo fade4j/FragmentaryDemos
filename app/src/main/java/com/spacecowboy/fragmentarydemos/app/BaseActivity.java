@@ -26,7 +26,8 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
         super.onCreate(savedInstanceState);
         // 这句很关键，注意是调用父类的方法
-        super.setContentView(R.layout.activity_base);
+        setContentView(R.layout.activity_base);
+        initDataBeforeViews();
         // 经测试在代码里直接声明透明状态栏更有效
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
@@ -52,10 +53,14 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             findViewById(R.id.fab).setOnClickListener(getFloatingButtonClickListener());
         }
 
-        initData();
+        initDataAfterViews();
     }
 
-    protected void initData() {
+    protected void initDataAfterViews() {
+    }
+
+    protected void initDataBeforeViews(){
+
     }
 
     protected abstract void initView(View view);
