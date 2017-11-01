@@ -7,6 +7,8 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.spacecowboy.fragmentarydemos.app.AppApplication;
@@ -58,9 +60,11 @@ public class UiUtil {
     public static int dp2px(float v) {
         return (int) (getDensity() * v + 0.5f);
     }
+
     public static int sp2px(float v) {
         return (int) (getScaleDensity() * v + 0.5f);
     }
+
     public static int px2dp(float v) {
         return (int) (v / getDensity() + 0.5f);
     }
@@ -71,5 +75,20 @@ public class UiUtil {
 
     public static float getScaleDensity() {
         return getResources().getDisplayMetrics().scaledDensity;
+    }
+
+    public static void toggleInputMethod(EditText editText) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getAppContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+    }
+
+    public static void closeInputMethod(EditText editText) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getAppContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(editText.getWindowToken(), InputMethodManager.RESULT_UNCHANGED_SHOWN);
+    }
+
+    public static void openInputMethod(EditText editText) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getAppContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.showSoftInputFromInputMethod(editText.getWindowToken(), InputMethodManager.SHOW_FORCED);
     }
 }

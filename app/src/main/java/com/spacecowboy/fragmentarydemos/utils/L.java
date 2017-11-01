@@ -16,6 +16,11 @@ public class L {
     }
 
     public static void e(String tag, String msg) {
-        Log.e(tag, msg == null ? "" : msg);
+        if (msg == null) {
+            msg = "null";
+        } else if (msg == "") {
+            msg = "空串";
+        }
+        Log.e(tag, msg);
     }
 }

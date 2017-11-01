@@ -35,6 +35,7 @@
         </activity>
         <activity android:name=".normaltest.IdleHandlerTestActivity">
         </activity>
+        <activity android:name=".normaltest.EditTextTestActivity"/>
     </application>
 
 </manifest>
