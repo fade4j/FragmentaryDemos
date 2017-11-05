@@ -10,6 +10,8 @@ import com.spacecowboy.fragmentarydemos.customview.circleimage.CircleImageTestAc
 import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_1.CustomViewActivity1_1;
 import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_1.activity.CustomViewActivity;
 import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_4_canvas_matrix.CanvasAndMatrixActivity;
+import com.spacecowboy.fragmentarydemos.customview.truntable.TurntableLayout;
+import com.spacecowboy.fragmentarydemos.customview.truntable.TurntableLayoutActivity;
 import com.spacecowboy.fragmentarydemos.normaltest.EditTextTestActivity;
 import com.spacecowboy.fragmentarydemos.normaltest.IdleHandlerTestActivity;
 import com.spacecowboy.fragmentarydemos.normaltest.ScrollableTestViewActivity;
@@ -85,10 +87,12 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
         section4.add("1. MessageQueue.IdleHandler");
         section4.add("2. EditText Test");
         section4.add("3. Scrollable TestView Test");
+        section4.add("4. TurntableLayout Test");
         ArrayList<Class> sectionActivities4 = new ArrayList<>();
         sectionActivities4.add(IdleHandlerTestActivity.class);
         sectionActivities4.add(EditTextTestActivity.class);
         sectionActivities4.add(ScrollableTestViewActivity.class);
+        sectionActivities4.add(TurntableLayoutActivity.class);
         mChildTitles.add(section4);
         mActivities.add(sectionActivities4);
 
