@@ -15,6 +15,7 @@ import com.spacecowboy.fragmentarydemos.customview.truntable.TurntableLayoutActi
 import com.spacecowboy.fragmentarydemos.normaltest.EditTextTestActivity;
 import com.spacecowboy.fragmentarydemos.normaltest.IdleHandlerTestActivity;
 import com.spacecowboy.fragmentarydemos.normaltest.ScrollableTestViewActivity;
+import com.spacecowboy.fragmentarydemos.normaltest.list_multi_type.ListMultiTypeActivity;
 import com.spacecowboy.fragmentarydemos.opensource.ButterKnifeActivity;
 import com.spacecowboy.fragmentarydemos.utils.UiUtil;
 import com.spacecowboy.fragmentarydemos.workingdemo.ArcMenuActivity;
@@ -65,10 +66,12 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
         section2.add("CustomViewActivity1_1");
         section2.add("Canvas And Matrix Test");
         section2.add("CircleImageView Test");
+
         mChildTitles.add(section2);
         sectionActivities2.add(CustomViewActivity1_1.class);
         sectionActivities2.add(CanvasAndMatrixActivity.class);
         sectionActivities2.add(CircleImageTestActivity.class);
+
         mActivities.add(sectionActivities2);
         // 工作Demo
         ArrayList<String> sectionThree = new ArrayList<>();
@@ -88,11 +91,13 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
         section4.add("2. EditText Test");
         section4.add("3. Scrollable TestView Test");
         section4.add("4. TurntableLayout Test");
+        section4.add("5. ListView Multi Type Test");
         ArrayList<Class> sectionActivities4 = new ArrayList<>();
         sectionActivities4.add(IdleHandlerTestActivity.class);
         sectionActivities4.add(EditTextTestActivity.class);
         sectionActivities4.add(ScrollableTestViewActivity.class);
         sectionActivities4.add(TurntableLayoutActivity.class);
+        sectionActivities4.add(ListMultiTypeActivity.class);
         mChildTitles.add(section4);
         mActivities.add(sectionActivities4);
 

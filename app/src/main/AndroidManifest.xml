@@ -41,6 +41,8 @@
         <activity android:name=".normaltest.EditTextTestActivity"/>
         <activity android:name=".normaltest.ScrollableTestViewActivity"/>
         <activity android:name=".customview.truntable.TurntableLayoutActivity"/>
+        <activity android:name=".normaltest.list_multi_type.ListMultiTypeActivity">
+        </activity>
     </application>
 
 </manifest>
