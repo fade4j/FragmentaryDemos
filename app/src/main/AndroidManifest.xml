@@ -43,6 +43,7 @@
         <activity android:name=".customview.truntable.TurntableLayoutActivity"/>
         <activity android:name=".normaltest.list_multi_type.ListMultiTypeActivity">
         </activity>
+        <activity android:name=".reflection.ReflectionTestActivity"/>
     </application>
 
 </manifest>

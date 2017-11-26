@@ -17,6 +17,7 @@ import com.spacecowboy.fragmentarydemos.normaltest.IdleHandlerTestActivity;
 import com.spacecowboy.fragmentarydemos.normaltest.ScrollableTestViewActivity;
 import com.spacecowboy.fragmentarydemos.normaltest.list_multi_type.ListMultiTypeActivity;
 import com.spacecowboy.fragmentarydemos.opensource.ButterKnifeActivity;
+import com.spacecowboy.fragmentarydemos.reflection.ReflectionTestActivity;
 import com.spacecowboy.fragmentarydemos.utils.UiUtil;
 import com.spacecowboy.fragmentarydemos.workingdemo.ArcMenuActivity;
 import com.spacecowboy.fragmentarydemos.workingdemo.VLayoutTestActivity;
@@ -92,12 +93,14 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
         section4.add("3. Scrollable TestView Test");
         section4.add("4. TurntableLayout Test");
         section4.add("5. ListView Multi Type Test");
+        section4.add("5. Reflection Test");
         ArrayList<Class> sectionActivities4 = new ArrayList<>();
         sectionActivities4.add(IdleHandlerTestActivity.class);
         sectionActivities4.add(EditTextTestActivity.class);
         sectionActivities4.add(ScrollableTestViewActivity.class);
         sectionActivities4.add(TurntableLayoutActivity.class);
         sectionActivities4.add(ListMultiTypeActivity.class);
+        sectionActivities4.add(ReflectionTestActivity.class);
         mChildTitles.add(section4);
         mActivities.add(sectionActivities4);
 
