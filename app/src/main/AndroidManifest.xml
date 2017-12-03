@@ -44,6 +44,8 @@
         <activity android:name=".normaltest.list_multi_type.ListMultiTypeActivity">
         </activity>
         <activity android:name=".reflection.ReflectionTestActivity"/>
+        <activity android:name=".opengl.OpenGLTestActivity"/>
+        <activity android:name=".opengl.OpenGLTestActivity2"/>
     </application>
 
 </manifest>

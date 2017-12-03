@@ -17,6 +17,8 @@ import com.spacecowboy.fragmentarydemos.normaltest.EditTextTestActivity;
 import com.spacecowboy.fragmentarydemos.normaltest.IdleHandlerTestActivity;
 import com.spacecowboy.fragmentarydemos.normaltest.ScrollableTestViewActivity;
 import com.spacecowboy.fragmentarydemos.normaltest.list_multi_type.ListMultiTypeActivity;
+import com.spacecowboy.fragmentarydemos.opengl.OpenGLTestActivity;
+import com.spacecowboy.fragmentarydemos.opengl.OpenGLTestActivity2;
 import com.spacecowboy.fragmentarydemos.opensource.ButterKnifeActivity;
 import com.spacecowboy.fragmentarydemos.reflection.ReflectionTestActivity;
 import com.spacecowboy.fragmentarydemos.utils.UiUtil;
@@ -107,17 +109,25 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
         mChildTitles.add(section4);
         mActivities.add(sectionActivities4);
 
+        // OpenGL Test
+        ArrayList<String> section5 = new ArrayList<>();
+        section5.add("1. Draw Rectangle");
+
+        ArrayList<Class> sectionActivities5 = new ArrayList<>();
+        sectionActivities5.add(OpenGLTestActivity2.class);
+        mChildTitles.add(section5);
+        mActivities.add(sectionActivities5);
     }
 
     /**
      * 添加父标题（大分类）
      */
     private void initParentData() {
-        mParentTitles.add("开源");
-        mParentTitles.add("Android自定义View(HenCoder)");
-        mParentTitles.add("工作Demo");
-        mParentTitles.add("Normal Test");
-        mParentTitles.add("待添加标题");
+        mParentTitles.add("Ⅰ.开源");
+        mParentTitles.add("Ⅱ.Android自定义View(HenCoder)");
+        mParentTitles.add("Ⅲ.工作Demo");
+        mParentTitles.add("Ⅳ.Normal Test");
+        mParentTitles.add("Ⅴ.OpenGL Test");
     }
 
     @Override
