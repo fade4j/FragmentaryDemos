@@ -1,10 +1,7 @@
 package com.spacecowboy.fragmentarydemos.opensource;
 
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.spacecowboy.fragmentarydemos.R;
 import com.spacecowboy.fragmentarydemos.app.BaseActivity;

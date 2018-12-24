@@ -1,33 +1,31 @@
 package com.spacecowboy.fragmentarydemos;
 
 import android.content.Intent;
-import android.util.SparseArray;
 import android.view.View;
 import android.widget.ExpandableListView;
 
 import com.spacecowboy.fragmentarydemos.app.BaseActivity;
 import com.spacecowboy.fragmentarydemos.app.MainExpandableAdapter;
+import com.spacecowboy.fragmentarydemos.at.AtTestActivity;
+import com.spacecowboy.fragmentarydemos.customview.avatar.AvatarLayoutTestActivity;
 import com.spacecowboy.fragmentarydemos.customview.circleimage.CircleImageTestActivity;
 import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_1.CustomViewActivity1_1;
 import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_1.activity.CustomViewActivity;
 import com.spacecowboy.fragmentarydemos.customview.hencoder.unit1_4_canvas_matrix.CanvasAndMatrixActivity;
-import com.spacecowboy.fragmentarydemos.customview.truntable.TurntableLayout;
 import com.spacecowboy.fragmentarydemos.customview.truntable.TurntableLayoutActivity;
 import com.spacecowboy.fragmentarydemos.normaltest.EditTextTestActivity;
 import com.spacecowboy.fragmentarydemos.normaltest.IdleHandlerTestActivity;
 import com.spacecowboy.fragmentarydemos.normaltest.ScrollableTestViewActivity;
 import com.spacecowboy.fragmentarydemos.normaltest.list_multi_type.ListMultiTypeActivity;
-import com.spacecowboy.fragmentarydemos.opengl.OpenGLTestActivity;
 import com.spacecowboy.fragmentarydemos.opengl.OpenGLTestActivity2;
 import com.spacecowboy.fragmentarydemos.opensource.ButterKnifeActivity;
 import com.spacecowboy.fragmentarydemos.reflection.ReflectionTestActivity;
 import com.spacecowboy.fragmentarydemos.utils.UiUtil;
+import com.spacecowboy.fragmentarydemos.widgets.MultiPageTestActivity;
 import com.spacecowboy.fragmentarydemos.workingdemo.ArcMenuActivity;
 import com.spacecowboy.fragmentarydemos.workingdemo.VLayoutTestActivity;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
 
 public class MainActivity extends BaseActivity implements ExpandableListView.OnChildClickListener {
     private ArrayList<String> mParentTitles;
@@ -84,10 +82,12 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
         sectionThree.add("1. 弧形菜单");
         sectionThree.add("2. VLayoutTest");
         sectionThree.add("3. Bitmap size text");
+        sectionThree.add("4. At SomeBody Test");
         ArrayList<Class> sectionThreeActivities = new ArrayList<>();
         sectionThreeActivities.add(ArcMenuActivity.class);
         sectionThreeActivities.add(VLayoutTestActivity.class);
         sectionThreeActivities.add(DailyTestActivity.class);
+        sectionThreeActivities.add(AtTestActivity.class);
         mChildTitles.add(sectionThree);
         mActivities.add(sectionThreeActivities);
 
@@ -99,6 +99,8 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
         section4.add("4. TurntableLayout Test");
         section4.add("5. ListView Multi Type Test");
         section4.add("5. Reflection Test");
+        section4.add("6. Avatar Layout Test");
+        section4.add("7. Multi Page Test");
         ArrayList<Class> sectionActivities4 = new ArrayList<>();
         sectionActivities4.add(IdleHandlerTestActivity.class);
         sectionActivities4.add(EditTextTestActivity.class);
@@ -106,6 +108,9 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
         sectionActivities4.add(TurntableLayoutActivity.class);
         sectionActivities4.add(ListMultiTypeActivity.class);
         sectionActivities4.add(ReflectionTestActivity.class);
+        sectionActivities4.add(AvatarLayoutTestActivity.class);
+        sectionActivities4.add(MultiPageTestActivity.class);
+
         mChildTitles.add(section4);
         mActivities.add(sectionActivities4);
 
@@ -115,6 +120,7 @@ public class MainActivity extends BaseActivity implements ExpandableListView.OnC
 
         ArrayList<Class> sectionActivities5 = new ArrayList<>();
         sectionActivities5.add(OpenGLTestActivity2.class);
+
         mChildTitles.add(section5);
         mActivities.add(sectionActivities5);
     }

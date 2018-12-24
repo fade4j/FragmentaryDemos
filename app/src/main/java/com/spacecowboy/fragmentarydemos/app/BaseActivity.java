@@ -36,11 +36,16 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
         FrameLayout rootContainer = (FrameLayout) findViewById(R.id.root_container_base);
         View subView = getSubContentView();
-        if (subView != null) {
-            rootContainer.addView(subView);
-            mUnbinder = ButterKnife.bind(this, subView);
-            initView(subView);
+        try {
+            if (subView != null) {
+                rootContainer.addView(subView);
+                mUnbinder = ButterKnife.bind(this, subView);
+                initView(subView);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar supportActionBar = getSupportActionBar();
@@ -59,7 +64,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     protected void initDataAfterViews() {
     }
 
-    protected void initDataBeforeViews(){
+    protected void initDataBeforeViews() {
 
     }
 
@@ -99,5 +104,13 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         if (mUnbinder != null) {
             mUnbinder.unbind();
         }
+    }
+
+    protected <T extends View> T find(int id, View... views) {
+        if (views != null && views.length > 0) {
+            return (T) views[0].findViewById(id);
+        }
+
+        return (T) findViewById(id);
     }
 }

@@ -46,6 +46,11 @@
         <activity android:name=".reflection.ReflectionTestActivity"/>
         <activity android:name=".opengl.OpenGLTestActivity"/>
         <activity android:name=".opengl.OpenGLTestActivity2"/>
+        <activity android:name=".customview.avatar.AvatarLayoutTestActivity"/>
+        <activity android:name=".constraint.ConstraintTestActivity"/>
+        <activity android:name=".widgets.MultiPageTestActivity"/>
+        <activity android:name=".at.AtTestActivity"/>
+        <activity android:name=".at.UserListActivity"/>
     </application>
 
 </manifest>

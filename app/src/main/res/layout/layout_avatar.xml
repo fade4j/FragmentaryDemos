@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.spacecowboy.fragmentarydemos.customview.avatar.AvatarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/avatar_layout"
+    android:background="@color/colorAccent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+</com.spacecowboy.fragmentarydemos.customview.avatar.AvatarLayout>
